@@ -1,20 +1,15 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import QRCode from "./Components/QRCode";
+import Nav from "./Components/Nav";
+// import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
-import { Container, Nav, Navbar } from "react-bootstrap";
 
-import "./App.css";
 
-export default function App(): ReactElement {
-  const { Brand, Toggle, Collapse } = Navbar;
+export default function App() {
   return (
-    <Container>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Brand>QRCode Generator</Brand>
-        </Container>
-      </Navbar>
+    <>
+      <Nav />
       <QRCode />
-    </Container>
+    </>
   );
 }
