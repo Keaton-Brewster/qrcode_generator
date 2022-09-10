@@ -28,10 +28,10 @@ export default function QrCode() {
       fgColor="#141926"
       level="H"
       imageSettings={{
-        src: "https://jpeg.com",
+        src: "https://cdn.dribbble.com/users/947358/screenshots/8501609/media/32a57be88f30050be4994cc9951995c3.png?compress=1&resize=800x600&vertical=top",
         excavate: true,
-        width: 500 * 0.1,
-        height: 500 * 0.1,
+        width: 100,
+        height: 100
       }}
     />
   );
