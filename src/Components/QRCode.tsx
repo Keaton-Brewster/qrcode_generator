@@ -1,5 +1,6 @@
 import * as React from "react";
 import QRCode from "qrcode.react";
+import "./CSS/qrcode.css";
 
 export default function QrCode() {
   const qrRef = React.useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -19,26 +20,22 @@ export default function QrCode() {
     setUrl("");
   };
 
-  const qrCode = (
+  const qrCode = url ? (
     <QRCode
       id="qrCodeElToRender"
-      size={500}
+      size={300}
       value={url}
       bgColor="white"
       fgColor="#141926"
-      level="H"
-      imageSettings={{
-        src: "https://cdn.dribbble.com/users/947358/screenshots/8501609/media/32a57be88f30050be4994cc9951995c3.png?compress=1&resize=800x600&vertical=top",
-        excavate: true,
-        width: 100,
-        height: 100
-      }}
+      level="L"
     />
+  ) : (
+    <></>
   );
 
   return (
     <div className="qr-container">
-      <form onSubmit={downloadQRCode} className="qr-container__form">
+      <form onSubmit={downloadQRCode} className="qr-form">
         <input
           type="text"
           value={url}
@@ -49,7 +46,7 @@ export default function QrCode() {
         <button type="submit">Download QR Code</button>
       </form>
 
-      <div className="qr-container__qr-code" ref={qrRef}>
+      <div className="qr-code" ref={qrRef}>
         {qrCode}
       </div>
     </div>
